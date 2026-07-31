@@ -1,0 +1,41 @@
+generated: '2026-07-20'
+method: derived
+source: https://docs.nil.foundation/nil/references/json-rpc-api/
+format: json-rpc-2.0
+envelope:
+  transport: JSON-RPC 2.0 over HTTP(S)
+  field: error
+  shape: '{ "jsonrpc": "2.0", "id": <id>, "error": { "code": <int>, "message": <string>, "data": <optional> } }'
+notes: >-
+  The =nil; RPC node exposes an Ethereum-style JSON-RPC API and returns errors using the
+  standard JSON-RPC 2.0 error object. The codes below are the JSON-RPC 2.0 pre-defined and
+  server-error ranges that any conforming node (including =nil;) returns; application-level
+  execution failures (reverts, insufficient balance/gas) are surfaced in the server-error
+  (-32000) range and in transaction receipts (GetInMessageReceipt).
+errors:
+  - code: -32700
+    name: parse_error
+    message: Parse error
+    cause: Invalid JSON was received by the server.
+  - code: -32600
+    name: invalid_request
+    message: Invalid Request
+    cause: The JSON sent is not a valid Request object.
+  - code: -32601
+    name: method_not_found
+    message: Method not found
+    cause: The requested JSON-RPC method does not exist or is not available on this node.
+  - code: -32602
+    name: invalid_params
+    message: Invalid params
+    cause: Invalid method parameter(s).
+  - code: -32603
+    name: internal_error
+    message: Internal error
+    cause: Internal JSON-RPC error.
+  - code: -32000
+    name: server_error
+    message: Server error
+    cause: >-
+      Implementation-defined server error range (-32000 to -32099). Used for execution
+      failures such as reverted calls, insufficient funds/gas, or invalid transactions.

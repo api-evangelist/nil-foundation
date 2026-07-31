@@ -1,0 +1,46 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.nil.foundation/nil/references/json-rpc-api/
+summary: >-
+  Cross-cutting request/response semantics for the =nil; JSON-RPC API — an Ethereum-style
+  JSON-RPC 2.0 interface over HTTP for the zkSharding L2 cluster.
+transport:
+  protocol: JSON-RPC 2.0
+  over: HTTP(S) POST
+  request_shape: '{ "jsonrpc": "2.0", "id": <id>, "method": <Method>, "params": [ ... ] }'
+authentication:
+  style: none (read) / signed-transaction (write)
+  ref: authentication/nil-foundation-authentication.yml
+idempotency:
+  supported: true
+  mechanism: >-
+    Idempotency is provided at the protocol level, not via an HTTP header. Read methods
+    (Get*, Call, GasPrice, ChainId) are naturally idempotent. Write submission via
+    SendRawTransaction is idempotent by construction: each signed transaction carries a
+    per-account sequence/nonce (seqno), so re-submitting the same signed raw transaction
+    does not double-execute — the cluster deduplicates on the signed transaction identity.
+  note: >-
+    There is no Idempotency-Key HTTP header; the nonce/seqno on the signed transaction is
+    the replay-protection and idempotency key.
+pagination:
+  style: none
+  note: >-
+    Block/transaction reads are addressed directly by hash, number, or (block, index);
+    there is no cursor/offset pagination. Log/event polling uses the filter methods
+    (NewFilter/NewBlockFilter/GetFilterChanges) rather than paged result sets.
+error_envelope:
+  ref: errors/nil-foundation-error-codes.yml
+  format: json-rpc-2.0
+sharding:
+  note: >-
+    =nil; is horizontally sharded; addresses and blocks are shard-scoped. Use
+    GetShardsIdList to enumerate shards. Cross-shard communication is handled by async
+    messages between execution shards.
+tokens:
+  native: NIL
+  note: Gas/fees for contract deployment and transaction execution are paid in NIL.
+versioning:
+  ref: lifecycle/nil-foundation-lifecycle.yml
+rate_limiting:
+  documented: false
+  note: No rate-limit signaling is documented for the public RPC endpoint.

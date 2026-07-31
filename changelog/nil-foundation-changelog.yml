@@ -1,0 +1,36 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.nil.foundation/nil/migration-guides/
+scheme: dated-release
+docs: https://docs.nil.foundation/nil/migration-guides/
+note: >-
+  =nil; publishes dated migration guides that double as a changelog. Recent window captured
+  below; the migration-guides index is the source of truth.
+entries:
+  - version: "Release 18.03.2025"
+    date: '2025-03-18'
+    breaking: true
+    highlights:
+      - Renamed CometaService inside Nil.js.
+    url: https://docs.nil.foundation/nil/migration-guides/march-1803-2025-release/
+  - version: "Release 03.02.2025"
+    date: '2025-02-03'
+    breaking: true
+    highlights:
+      - "Terminology renames: message -> transaction, wallet -> smart account, currency -> token."
+      - Simplified creation of new smart accounts in Nil.js (helper functions incl. generateRandomAddress()).
+    url: https://docs.nil.foundation/nil/migration-guides/february-0302-2025-release/
+  - version: "Release 14.01.2025"
+    date: '2025-01-14'
+    breaking: true
+    highlights:
+      - Changed gas calculation for outgoing transactions and modified the cluster default gas price.
+    url: https://docs.nil.foundation/nil/migration-guides/january-1401-2025-release/
+  - version: "Release 01.10.2024"
+    date: '2024-10-01'
+    breaking: true
+    url: https://docs.nil.foundation/nil/migration-guides/october-0110-2024-release/
+  - version: "Release 17.09.2024"
+    date: '2024-09-17'
+    breaking: true
+    url: https://docs.nil.foundation/nil/migration-guides/september-1709-2024-release/

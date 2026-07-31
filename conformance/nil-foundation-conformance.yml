@@ -1,0 +1,27 @@
+generated: '2026-07-20'
+method: derived
+source: https://docs.nil.foundation/nil/references/json-rpc-api/
+standards:
+  - id: json-rpc-2.0
+    conforms: true
+    evidence: >-
+      The =nil; cluster exposes a JSON-RPC 2.0 API; requests/responses use the standard
+      jsonrpc/id/method/params and error objects.
+  - id: ethereum-json-rpc
+    conforms: partial
+    evidence: >-
+      Supports a subset of standard Ethereum JSON-RPC methods (GetBalance, GetCode,
+      GasPrice, ChainId, Call, SendRawTransaction, filter methods) alongside =nil;-specific
+      methods (GetShardsIdList, GetCurrencies, GetInMessage*), reflecting the account-abstract,
+      sharded execution model (all accounts are contracts, messages instead of EOA txns).
+  - id: evm-compatible
+    conforms: true
+    evidence: >-
+      Smart contracts are authored in Solidity and verified in-EVM; the placeholder proof
+      system provides an in-EVM verifier.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors use the JSON-RPC 2.0 error object, not application/problem+json.
+  - id: oauth2
+    conforms: false
+    evidence: No OAuth; authorization is via on-chain signed transactions.

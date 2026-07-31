@@ -1,0 +1,59 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.npmjs.com/org/nilfoundation
+packages:
+  - language: javascript
+    registry: npm
+    name: "@nilfoundation/niljs"
+    version: 0.27.0
+    license: MIT
+    url: https://www.npmjs.com/package/@nilfoundation/niljs
+    repository: https://github.com/NilFoundation/nil.js
+    install: npm install @nilfoundation/niljs
+    description: Client-side TypeScript library to interact with the =nil; cluster (PublicClient, WalletV1/SmartAccountV1, Faucet).
+    official: true
+  - language: solidity
+    registry: npm
+    name: "@nilfoundation/smart-contracts"
+    version: 0.9.0
+    license: Apache-2.0
+    url: https://www.npmjs.com/package/@nilfoundation/smart-contracts
+    install: npm install @nilfoundation/smart-contracts
+    description: Solidity extension libraries and contracts for =nil; (Nil.sol, NilTokenBase.sol, SmartAccount.sol, Faucet.sol).
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@nilfoundation/hardhat-nil-plugin"
+    version: 0.2.0
+    url: https://www.npmjs.com/package/@nilfoundation/hardhat-nil-plugin
+    install: npm install @nilfoundation/hardhat-nil-plugin
+    description: Hardhat plugin for seamless deployment and interaction with =nil;.
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@nilfoundation/ui-kit"
+    version: 2.7.0
+    url: https://www.npmjs.com/package/@nilfoundation/ui-kit
+    install: npm install @nilfoundation/ui-kit
+    description: =nil; Foundation user interface kit.
+    official: true
+  - language: javascript
+    registry: npm
+    name: "create-nil-hardhat-project"
+    version: 1.0.2
+    url: https://www.npmjs.com/package/@nilfoundation/create-nil-hardhat-project
+    install: npm create @nilfoundation/nil-hardhat-project
+    description: Scaffolds a Hardhat project preconfigured for deploying to =nil;.
+    official: true
+  - language: solidity
+    registry: npm
+    name: "@nilfoundation/evm-placeholder-verification"
+    version: 1.1.2
+    url: https://www.npmjs.com/package/@nilfoundation/evm-placeholder-verification
+    install: npm install @nilfoundation/evm-placeholder-verification
+    description: =nil; Placeholder proof system in-EVM verifier.
+    official: true
+notes: |
+  Distribution is npm-only under the @nilfoundation scope; no first-party PyPI, crates.io,
+  Maven, NuGet, RubyGems, or Packagist packages were found. The =nil; CLI binary is
+  installed via a shell script (see cli/nil-foundation-cli.yml), not a package registry.

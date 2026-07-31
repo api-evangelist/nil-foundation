@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.nil.foundation/nil/references/json-rpc-api/
+docs: https://docs.nil.foundation/nil/reference/client/
+summary:
+  model: blockchain-signature
+  types: [none, signature]
+  oauth2_flows: []
+  api_key_in: []
+notes: >-
+  The =nil; JSON-RPC API is a public blockchain RPC endpoint. It uses no API keys, OAuth,
+  or bearer tokens. Read-only methods (via niljs PublicClient) require no authentication.
+  State-changing operations are authorized by ECDSA-signed transactions submitted through
+  SendRawTransaction: the niljs WalletV1 / SmartAccountV1 classes sign external messages
+  with the account's private key. All accounts on =nil; are smart contracts (no EOAs), so
+  authorization is enforced on-chain by the smart account contract rather than by an API
+  credential.
+schemes:
+  - name: public-read
+    type: none
+    description: Read-only JSON-RPC methods require no credentials.
+    operations: [GetBlockByNumber, GetBalance, GetCode, Call, GasPrice, ChainId]
+  - name: signed-transaction
+    type: signature
+    scheme: ecdsa
+    description: >-
+      Write operations are authorized by a signed raw transaction (external message)
+      submitted via SendRawTransaction; signing is handled client-side by niljs
+      WalletV1 / SmartAccountV1 using the account private key.
+    operations: [SendRawTransaction]

@@ -1,8 +1,16 @@
 aid: nil-foundation
 name: =nil; Foundation
-description: '=nil; Foundation is a company surfaced as a portfolio company of polychain and added to
-  the API Evangelist network as a stub for enrichment. Sector: zk-infrastructure. This profile is a lead
-  awaiting the enrichment pipeline.'
+description: >-
+  =nil; Foundation is the developer of =nil;, an Ethereum Layer 2 blockchain powered by
+  zkSharding that delivers horizontal scalability with built-in cross-shard communication
+  and zero-knowledge proofs. On =nil; all accounts are smart contracts (no EOAs), state is
+  partitioned across execution shards, and correctness is verified with zk proofs while
+  Ethereum provides data availability and consensus. Developers build with Solidity smart
+  contracts and interact with the cluster through an Ethereum-style JSON-RPC 2.0 API, the
+  @nilfoundation/niljs TypeScript client library, the =nil; CLI, and a Hardhat plugin.
+  =nil; Foundation also develops zkLLVM (a zero-knowledge proof circuit compiler) and the
+  Placeholder proof system with an in-EVM verifier. The company is a portfolio company of
+  Polychain Capital.
 url: https://raw.githubusercontent.com/api-evangelist/nil-foundation/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,18 +18,113 @@ x-backed-by:
 - polychain
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+image: https://nil.foundation/favicon.ico
 tags:
 - Company
 - Zk Infrastructure
-apis: []
+- Blockchain
+- Layer 2
+- Ethereum
+- Zero Knowledge Proofs
+- zkSharding
+- JSON-RPC
+- Smart Contracts
+- Developer Tools
+apis:
+- name: "=nil; JSON-RPC API"
+  description: >-
+    Ethereum-style JSON-RPC 2.0 API exposing the =nil; cluster — blocks, transactions
+    (messages), accounts, contract calls, gas pricing, shard enumeration, tokens, and event
+    filters. Read methods require no authentication; state changes are authorized by signed
+    raw transactions.
+  humanURL: https://docs.nil.foundation/nil/references/json-rpc-api/
+  baseURL: https://api.devnet.nil.foundation
+  tags:
+  - JSON-RPC
+  - Blockchain
+  - Layer 2
+  properties:
+  - type: Documentation
+    url: https://docs.nil.foundation/nil/references/json-rpc-api/
+  - type: Authentication
+    url: authentication/nil-foundation-authentication.yml
+  - type: Conventions
+    url: conventions/nil-foundation-conventions.yml
+  - type: Idempotency
+    url: conventions/nil-foundation-conventions.yml
+  - type: ErrorCatalog
+    url: errors/nil-foundation-error-codes.yml
+  - type: Conformance
+    url: conformance/nil-foundation-conformance.yml
+  - type: MCPServer
+    url: mcp/nil-foundation-mcp.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/nil-foundation-domain-security.yml
 - type: Website
   url: https://nil.foundation
+- type: DeveloperPortal
+  url: https://docs.nil.foundation/
+- type: Documentation
+  url: https://docs.nil.foundation/
+- type: APIReference
+  url: https://docs.nil.foundation/nil/references/json-rpc-api/
+- type: GettingStarted
+  url: https://docs.nil.foundation/nil/getting-started/prerequisites/
+- type: Blog
+  url: https://nil.foundation/blog
+- type: GitHubOrganization
+  url: https://github.com/NilFoundation
+- type: PrivacyPolicy
+  url: https://nil.foundation/pages/privacy-policy
+- type: SDKs
+  url: packages/nil-foundation-packages.yml
+- type: Packages
+  url: packages/nil-foundation-packages.yml
+- type: CLI
+  url: cli/nil-foundation-cli.yml
+- type: MCPServer
+  url: mcp/nil-foundation-mcp.yml
+- type: LLMsTxt
+  url: llms/nil-foundation-llms.txt
+- type: Authentication
+  url: authentication/nil-foundation-authentication.yml
+- type: Conventions
+  url: conventions/nil-foundation-conventions.yml
+- type: Idempotency
+  url: conventions/nil-foundation-conventions.yml
+- type: ErrorCatalog
+  url: errors/nil-foundation-error-codes.yml
+- type: Conformance
+  url: conformance/nil-foundation-conformance.yml
+- type: Lifecycle
+  url: lifecycle/nil-foundation-lifecycle.yml
+- type: Deprecation
+  url: https://docs.nil.foundation/nil/migration-guides/
+- type: ChangeLog
+  url: changelog/nil-foundation-changelog.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 11
+  pass: local-v1

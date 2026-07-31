@@ -1,0 +1,47 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: https://docs.nil.foundation/nil/references/json-rpc-api/
+note: >-
+  No official hosted or published MCP server was found for =nil; (no @nilfoundation MCP
+  package, no docs reference). The tool list below is a CANDIDATE derived from the
+  documented JSON-RPC methods, one tool per method, as a starting point for an agent-native
+  surface.
+server:
+  name: nil-foundation
+  transport: http
+  url: null
+tools:
+  - name: get_block_by_number
+    description: Retrieve a block by number.
+    source_operation: json-rpc#GetBlockByNumber
+  - name: get_block_by_hash
+    description: Retrieve a block by hash.
+    source_operation: json-rpc#GetBlockByHash
+  - name: get_balance
+    description: Query an account balance.
+    source_operation: json-rpc#GetBalance
+  - name: get_code
+    description: Retrieve smart-contract bytecode for an address.
+    source_operation: json-rpc#GetCode
+  - name: call
+    description: Execute a read-only contract call.
+    source_operation: json-rpc#Call
+  - name: gas_price
+    description: Get the current gas price.
+    source_operation: json-rpc#GasPrice
+  - name: chain_id
+    description: Identify the chain.
+    source_operation: json-rpc#ChainId
+  - name: send_raw_transaction
+    description: Broadcast a signed raw transaction.
+    source_operation: json-rpc#SendRawTransaction
+  - name: get_in_message_receipt
+    description: Get a transaction (message) receipt.
+    source_operation: json-rpc#GetInMessageReceipt
+  - name: get_shards_id_list
+    description: Retrieve the list of shard IDs.
+    source_operation: json-rpc#GetShardsIdList
+  - name: get_currencies
+    description: List available currencies/tokens.
+    source_operation: json-rpc#GetCurrencies

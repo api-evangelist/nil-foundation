@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.nil.foundation/nil/reference/cli-reference/
+name: "=nil; CLI (nil)"
+description: >-
+  First-party command-line tool for interacting with the =nil; cluster, abstracting over
+  the JSON-RPC API. Can be integrated into a CI/CD pipeline.
+repository: https://github.com/NilFoundation/nil_cli
+docs: https://docs.nil.foundation/nil/tools/nil-cli/usage/
+reference: https://docs.nil.foundation/nil/reference/cli-reference/
+install:
+  - method: shell
+    command: "curl -fsSL https://github.com/NilFoundation/nil_cli/raw/master/install.sh | bash"
+config:
+  file: config.yaml
+  override_flag: "--config"
+  commands:
+    - "nil config init"
+    - "nil config set KEY VALUE"
+    - "nil config get KEY"
+    - "nil config show"
+commands:
+  - name: block
+    description: Retrieve a block from the cluster.
+  - name: completion
+    description: Generate shell autocompletion scripts.
+  - name: config
+    description: Manage CLI configuration (RPC endpoint, keys).
+  - name: contract
+    description: Interact with contracts on the cluster.
+  - name: help
+    description: Display help information.
+  - name: keygen
+    description: Generate new keys or derive them from a hex private key.
+  - name: message
+    description: Retrieve a message (transaction) from the cluster.
+  - name: minter
+    description: Interact with the currency/token minter.
+  - name: receipt
+    description: Retrieve a transaction receipt from the cluster.
+  - name: system
+    description: Request system-wide (cluster) information.
+  - name: wallet
+    description: Interact with wallets / smart accounts on the cluster.

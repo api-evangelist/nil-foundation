@@ -1,0 +1,26 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.nil.foundation/nil/migration-guides/
+versioning:
+  scheme: dated-release
+  note: >-
+    Releases are cut and communicated as dated migration guides (e.g. Release 18.03.2025)
+    rather than SemVer API versions. Client libraries (@nilfoundation/niljs) follow their
+    own npm SemVer track. The network is a testnet (=nil; Testnet v1) progressing toward
+    mainnet.
+  docs: https://docs.nil.foundation/nil/migration-guides/
+deprecation:
+  policy_url: https://docs.nil.foundation/nil/migration-guides/
+  sunset_header: false
+  note: >-
+    Breaking changes and renames are announced through dated migration guides with before/after
+    guidance (e.g. message -> transaction, wallet -> smart account, currency -> token in the
+    03.02.2025 release).
+network_stage: testnet
+block_explorer: https://explore.nil.foundation/
+status_page:
+  url: null
+  note: No dedicated status page was found.
+sla:
+  url: null
+  note: No published SLA (testnet).
