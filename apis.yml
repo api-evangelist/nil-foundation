@@ -93,8 +93,9 @@ apis:
     url: errors/nil-foundation-error-codes.yml
   - type: Conformance
     url: conformance/nil-foundation-conformance.yml
-  - type: MCPServer
+  - type: X-MCPServerCandidate
     url: mcp/nil-foundation-mcp.yml
+    note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -125,8 +126,9 @@ common:
   url: packages/nil-foundation-packages.yml
 - type: CLI
   url: cli/nil-foundation-cli.yml
-- type: MCPServer
+- type: X-MCPServerCandidate
   url: mcp/nil-foundation-mcp.yml
+  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
 - type: LLMsTxt
   url: llms/nil-foundation-llms.txt
 - type: Authentication
